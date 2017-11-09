@@ -105,10 +105,11 @@
 
 				foreach ($ssb_social_sites_domain_url as $url_key=>$url_value){
 
-					$ssb_social_domain_url_new[$url_key] = sanitize_text_field($url_value);
+					$ssb_social_domain_url_new[$url_key] = esc_url($url_value);
 				}
 				$ssb_social_sites_domain_url = $ssb_social_domain_url_new;
 
+                //echo '<pre>'.var_export($ssb_social_sites_domain_url, true).'</pre>';
 
 
 			update_option('ssb_social_sites_domain_url', $ssb_social_sites_domain_url);				
@@ -120,7 +121,7 @@
 
 				foreach ($ssb_social_sites_domain_icon as $icon_key=>$icon_value){
 
-					$ssb_social_sites_domain_icon_new[$icon_key] = sanitize_text_field($icon_value);
+					$ssb_social_sites_domain_icon_new[$icon_key] = esc_url($icon_value);
 				}
 				$ssb_social_sites_domain_icon = $ssb_social_sites_domain_icon_new;
 
